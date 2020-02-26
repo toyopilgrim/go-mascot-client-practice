@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.jsample.mascot";
+
+package com.jsample.mascot;
+
+message MascotRequest {
+    int64 id = 1;
+}
+
+message MascotResponse {
+     int64 id = 1;
+     string name = 2;
+     string message =3;
+}
+
+service MascotService {
+     rpc hello(MascotRequest) returns (MascotResponse);
+}
